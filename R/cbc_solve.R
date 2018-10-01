@@ -167,7 +167,7 @@ solution_status <- function(result) {
 
 #' @export
 solution_status.rcbc_milp_result <- function(result) {
-  print(names(result))
+  print(result$status)
   status_map <- list(
     is_proven_optimal = "optimal",
     is_proven_dual_infeasible = "unbounded",
