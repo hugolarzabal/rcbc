@@ -178,7 +178,7 @@ solution_status.rcbc_milp_result <- function(result) {
     is_iteration_limit_reached = "iterationlimit",
     is_seconds_limit_reached = "timelimit"
     )
-
+  print(result)
   result <- Filter(function(x) is.logical(x) && x == TRUE, result)
   print(names(result))
   if (length(result) > 0L) {
