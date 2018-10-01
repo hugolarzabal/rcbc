@@ -61,7 +61,7 @@ List cpp_cbc_solve(NumericVector obj,
 
   const double objValue = model.solver()->getObjValue();
   return List::create(
-    Named("status",model.status())
+    Named("status",model.status()),
     Named("column_solution", solution),
     Named("objective_value", objValue),
     Named("is_proven_optimal", model.isProvenOptimal()),
