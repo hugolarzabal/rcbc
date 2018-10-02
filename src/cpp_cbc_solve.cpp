@@ -73,7 +73,9 @@ List cpp_cbc_solve(NumericVector obj,
 
     Named("is_iteration_limit_reached", isIterationLimitReached),
     Named("is_seconds_limit_reached", model.isSecondsLimitReached()),
-    Named("gap", model.getAllowableGap())
+    Named("time", model.getMaximumSeconds()),
+    Named("number_of_solutions", getMaximumSolutions()),
+    Named("absolute_gap", model.getAllowableGap())
   );
 }
 
