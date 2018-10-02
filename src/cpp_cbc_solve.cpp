@@ -76,7 +76,7 @@ List cpp_cbc_solve(NumericVector obj,
     Named("time", model.getMaximumSeconds()),
     Named("number_of_solutions", model.getMaximumSolutions()),
     Named("absolute_gap", model.getAllowableGap()),
-    Named("current_objective_value",getCurrentObjValue())
+    Named("current_objective_value", model.getCurrentObjValue())
   );
 }
 
