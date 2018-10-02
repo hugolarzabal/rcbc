@@ -60,6 +60,8 @@ List cpp_cbc_solve(NumericVector obj,
   bool isIterationLimitReached = model.solver()->isIterationLimitReached();
 
   const double objValue = model.solver()->getObjValue();
+  const double currentObjValue = model.solver()->getCurrentObjValue();
+  
   return List::create(
     Named("status",model.status()),
     Named("column_solution", solution),
@@ -76,7 +78,7 @@ List cpp_cbc_solve(NumericVector obj,
     Named("time", model.getMaximumSeconds()),
     Named("number_of_solutions", model.getMaximumSolutions()),
     Named("absolute_gap", model.getAllowableGap()),
-    Named("current_objective_value", model.getCurrentObjValue())
+    Named("current_objective_value", currentObjValue)
   );
 }
 
