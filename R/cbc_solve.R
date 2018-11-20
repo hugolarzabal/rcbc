@@ -167,7 +167,7 @@ solution_status <- function(result) {
 
 #' @export
 solution_status.rcbc_milp_result <- function(result) {
-  print(result$status)
+
   status_map <- list(
     is_proven_optimal = "optimal",
     is_proven_dual_infeasible = "unbounded",
@@ -178,9 +178,9 @@ solution_status.rcbc_milp_result <- function(result) {
     is_iteration_limit_reached = "iterationlimit",
     is_seconds_limit_reached = "timelimit"
     )
-  print(result)
+
   result <- Filter(function(x) is.logical(x) && x == TRUE, result)
-  print(names(result))
+
   if (length(result) > 0L) {
     status_map[names(result)][[1L]]
   }
